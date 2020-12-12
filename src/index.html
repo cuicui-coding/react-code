@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+     class Jquery{
+         constructor(node){
+             this.elment = document.getElementById(node);
+         }
+         get(){
+             return this;
+         }
+         css(prop, value){
+             this.elment.setAttribute(prop,value);
+             return this;
+         }
+         extend(fn){
+             this._proto_.fn = fn; //原型
+             this.fn = fn; //实例
+             Jquery.fn = fn; // 静态方法
+
+         }
+         
+     }
+     Jquery.prototype.fn = fn;
+     const $ = new Jquery('#id')
+
+    const aa =[1,2,3]
+    aa.reduce((total, i)=>{
+        return total + i;
+    },0)
+
+    Array.prototype.reduce = function (fn, initialValue){
+
+        let result = initialValue;
+
+        for(let i = 0,len = this.length; i<len; i++){
+           result =  fn(result, this[i])
+        }
+
+    }
+
+    function throtle (fn, delay){
+        let canRun = true;
+        let first = true;
+        return ()=>{
+            canRun = false;
+
+            if(first){
+                fn();
+                first = false;
+                return;
+            }
+            
+            let timeId = setTimeout(()=>{
+                if(!canRun) return;
+                fn();
+                canRun = true;
+
+            }, delay)
+
+            }
+        
+        }
+    }
+    
+    </script>
+</body>
+</html>
