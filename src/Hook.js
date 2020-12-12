@@ -24,7 +24,7 @@ function Example() {
   return (
     <>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button onClick={() => {debugger;setCount(count + 1)}}>Click me</button>
     </>
   );
 }

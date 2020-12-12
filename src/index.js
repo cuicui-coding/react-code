@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './Hook'
+import App from './Click'
 
-debugger
 ReactDOM.render(<App name="appComponent" />, document.getElementById('root'))

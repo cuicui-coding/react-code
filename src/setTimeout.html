@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    window.addEventListener('error', (event) => {
+    console.log(event, '捕获到errror')
+});
+    setTimeout(()=>{
+      console.log('第一次')
+      try{
+        throw '第一次错误了'
+      }catch(e){
+        console.log('try..catch')
+      }
+      
+      console.log('第一次出错后')
+    },1000)
+    setTimeout(()=>{
+      console.log('第二次')
+    },1000)
+  </script>
+  <script>
+    console.log(123)
+  </script>
+  
+</body>
+</html>

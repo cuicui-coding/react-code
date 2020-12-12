@@ -4,9 +4,13 @@ import './index.css'
 
 class Parent extends React.Component {
   state = {
-    num: 1,
+    num: 0,
   }
-
+  componentDidMount(){
+    const newNum = this.state.num + 1
+    debugger;
+    this.setState({ num: newNum })
+  }
   updateNum1() {
     const newNum = this.state.num + 1
 
@@ -30,5 +34,4 @@ class Parent extends React.Component {
     )
   }
 }
-debugger
-ReactDOM.render(<Parent name="appComponent" />, document.getElementById('root'))
+export default Parent;
