@@ -8,22 +8,21 @@ function App() {
   const handleClick = () => {
     debugger;
     setstate(state + 1)
-    debugger
     setstate(state + 1)
-    debugger;
+
   }
+
   const handleClickParent = ()=>{
     debugger
-    console.log('handleClickParent')
+    console.log('parent')
   }
   debugger;
   return (
     <div onClick={handleClickParent}>
-      <p name={state+ 'ppp'}>{state}</p>
+      <p name={state+'-p'}>{state}</p>
       <button name="button123" onClick={handleClick}>加1</button>
     </div>
   )
 }
-
 debugger
 ReactDOM.render(<App name="appComponent" />, document.getElementById('root'))
